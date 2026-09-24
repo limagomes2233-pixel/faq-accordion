@@ -1,0 +1,94 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --White: hsl(0, 100%, 100%);
+    --Purple100: hsl(275, 100%, 97%);
+    --Purple600: hsl(292, 16%, 49%);
+    --Purple950: hsl(292, 42%, 14%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Purple100); 
+    font-family: 'Work Sans', sans-serif; /* Aplica a fonte oficial */
+    flex-direction: column;
+  
+    background-image: url('./assets/images/background-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 320px; 
+    background-position: top;
+}
+
+.card {
+    background-color: var(--White); /* Ajustado: fundo branco no card */
+    width: 90%;
+    max-width: 600px;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--Purple950);
+}
+
+/* Espaçamento entre os tópicos do FAQ */
+.faq-item {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--Purple100);
+}
+
+/* Remove a linha divisória do último item */
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-question span {
+    font-weight: 700;
+    color: var(--Purple950);
+    font-size: 1.05rem;
+    transition: color 0.2s ease;
+}
+
+/* Efeito hover na pergunta */
+.faq-question:hover span {
+    color: #ad28eb; /* Efeito roxo ao passar o mouse */
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 1rem;
+    color: var(--Purple600);
+    line-height: 1.5;
+}
+
+
+.faq-item.active .faq-answer {
+    display: block;
+}
